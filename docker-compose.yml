@@ -1,16 +1,20 @@
-version: '3.8'
+version: "3"
 services:
-  minecraft-bedrock:
+  bedrock-server:
     image: itzg/minecraft-bedrock-server
     container_name: bedrock-server
-    restart: unless-stopped
-    ports:
-      - "19132:19132/udp"
     environment:
       - EULA=TRUE
-      - OPS=killerlala150
-      - LEVEL_NAME=world # The server looks for a folder named 'world'
+      - ALLOW_CHEATS=true
+      - OPS=Killerlala150,2535471448557756
+      - DEFAULT_PLAYER_PERMISSION_LEVEL=operator
+      - LEVEL_NAME=world
+      - VIEW_DISTANCE=20
+    ports:
+      - "19132:19132/udp"
     volumes:
-      # This maps the /world folder in your repo 
-      # directly to the folder the server expects.
+      # This points the container to your permanent VPS folder
       - /var/lib/minecraft-data/world:/data/worlds/world
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
