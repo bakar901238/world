@@ -7,7 +7,7 @@ services:
       - EULA=TRUE
       - ALLOW_CHEATS=true
       - OPS=Killerlala150,2535471448557756
-      - DEFAULT_PLAYER_PERMISSION_LEVEL=operator
+      - DEFAULT_PLAYER_PERMISSION_LEVEL=member
       - LEVEL_NAME=world
       - VIEW_DISTANCE=20
     ports:
