@@ -13,4 +13,4 @@ services:
     volumes:
       # This maps the /world folder in your repo 
       # directly to the folder the server expects.
-      - ./world:/data/worlds/world
+      - /var/lib/minecraft-data/world:/data/worlds/world
