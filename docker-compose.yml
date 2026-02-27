@@ -18,4 +18,4 @@ services:
       # This maps the root of your GitHub repo (where Dokploy pulls the files)
       # to the server data folder. 
       # . (current directory) refers to the root of your repo.
-      - .:/data
+      - .:/data/world
