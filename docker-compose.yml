@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   minecraft-bedrock:
     image: itzg/minecraft-bedrock-server
@@ -10,12 +9,8 @@ services:
     environment:
       - EULA=TRUE
       - OPS=killerlala150
-      - GAMEMODE=survival
-      - DIFFICULTY=easy
-      - LEVEL_NAME=world # This MUST match the folder name of your world in the repo
-      - VIEW_DISTANCE=10
+      - LEVEL_NAME=world # The server looks for a folder named 'world'
     volumes:
-      # This maps the root of your GitHub repo (where Dokploy pulls the files)
-      # to the server data folder. 
-      # . (current directory) refers to the root of your repo.
-      - .:/data/world
+      # This maps the /world folder in your repo 
+      # directly to the folder the server expects.
+      - ./world:/data/worlds/world
